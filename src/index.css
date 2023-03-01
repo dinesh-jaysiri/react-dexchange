@@ -1,13 +1,878 @@
+:root {
+  --color-primary: #f0b90b;
+  --color-secondary: #0ecb81;
+  --color-accent: #f6465d;
+  --color-background: #14151a;
+  --color-body:#eaecef;
+  --color-body-dark: #161a1e;
+  --color-body-light:#5e6673;
+  --color-scorllar:#5e6673;
+  --border-radus:3px;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* typography */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
 body {
+  background: var(--color-background);
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  color: var(--color-body);
+  font-family: 'IBM Plex Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h2 {
+  font-size: 3.91vw;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1;
+  color: var(--color-body);
 }
+.label {
+  display: block;
+  font-size: 3.472vw;
+  font-weight: 500;
+  margin-bottom: 2.17vw;
+}
+
+.label--small {
+  font-size: 3.038vw;
+  font-weight: 300;
+}
+/* 0.217 */
+@media screen and (min-width:460px){
+h2 {
+  font-size: 1.8rem;
+}
+.label {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+.label--small{
+  font-size: 1.4rem;
+}
+
+}
+/* button */
+
+.btn {
+  font-size: 3.038vw;
+  font-weight: 500;
+  padding-top: 3.255vw;
+  padding-bottom: 3.255vw;
+  color: var(--color-primary);
+  background: var(--color-body-dark);
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: var(--border-radus);
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-body);
+}
+
+.btn--outline {
+  background: var(--color-body-dark);
+  border: 1px solid var(--color-primary);
+  
+}
+
+
+.btn::after{
+  content: ">";
+  margin-left: 1.085vw;
+  transition: margin 0.15s ;
+}
+
+.btn:hover::after {
+  margin-left: 2.17vw;
+}
+
+.toggle-btn__container{
+  background: var(--color-body-light);
+  padding: 0.434vw;
+  border-radius: var(--border-radus);
+  display: inline-block;
+}
+.toggle-btn{
+  border: none;
+  border-radius: var(--border-radus);
+  padding:1.519vw  2.17vw 1.519vw 2.17vw;
+  font-size: 3.038vw;
+  font-weight: 500;
+  color: var(--color-body);
+  background: none;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+
+}
+.toggle-btn--active{
+  background:var(--color-primary);
+}
+
+.btn--cancel{
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--color-primary);
+  padding: 0.7vw 1.4vw 0.7vw 1.4vw;
+  cursor: pointer;
+  border-radius: var(--border-radus);
+  margin-right: 1.4vw;
+}
+
+
+@media  screen and (min-width:460px) {
+  .btn {
+    font-size: 1.4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  
+  .btn::after {
+    margin-left: .5rem;
+    }
+  
+  .btn:hover::after {
+    margin-left: 1rem;
+  }
+
+  .toggle-btn__container{
+    padding: 2px;
+  }
+
+  .toggle-btn{
+    padding:.7rem 1rem .7rem 1rem;
+    font-size: 1.4rem; 
+  }
+
+  .btn--cancel {
+    padding: .1rem .6rem .1rem .6rem;
+    margin-right: .6rem;
+  }
+
+}
+
+/* input */
+.input {
+  padding-top: 2.17vw;
+  padding-bottom: 2.17vw;
+  padding-left: 4.34vw;
+  margin-bottom: 4.34vw;
+  font-size: 3.472vw;
+  font-weight: 300;
+  color: var(--color-body);
+  border-radius: 3px;
+  border: 0;
+  outline: 0;
+  background: var(--color-body-light);
+  width: 100%;
+  
+}
+
+.input--error{
+  color: var(--color-accent);
+}
+
+.input::placeholder, .input::-webkit-input-placeholder{
+  color: var(--color-body);
+}
+
+/* hide inner arrow  */
+/* Chrome, Safari, Edge, Opera */
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media screen and (min-width:460px) {
+  .input {
+    padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 2rem;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+  }
+}
+
+
+.icon {
+  border-radius: 100%;
+  width: 4.34vw;
+  height: 4.34vw;
+}
+
+.icon--small {
+  width: 3.038vw;
+  height: 3.038vw;
+}
+
+.icon-label{
+ margin-left: 2.17vw;
+ margin-right: 2.17vw;
+}
+
+@media screen and (min-width:460px) {
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  .icon--small {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .icon-label{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* banner */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10.85vw;
+  padding-bottom: 10.85vw;
+}
+
+@media screen and (min-width:460px) {
+  .banner {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }}
+
+
+
+
+/* table */
+.price-table{
+  max-height: 30.38vw;
+  overflow-y: scroll;
+}
+.price-table table {
+  width: 100%;
+}
+
+
+
+.price-table .icon{
+  fill: var(--color-body);
+}
+
+.price-talbel__head{
+  font-size:4.62vw ;
+  font-weight: 300;
+}
+
+
+ .price-table th{
+  vertical-align: middle;
+}
+
+.price-table th:nth-child(1) {
+  text-align: left;
+  width: 40%;
+}
+.price-table th:nth-child(1) .icon-label{
+  margin-left: 0;
+}
+
+.price-table th:nth-child(2),.price-table th:nth-child(3) {
+  text-align: right;
+  width: 30%;
+}
+
+.price-table thead th {
+  padding-bottom: 3.33vw;
+}
+
+
+.price-table tbody {
+  font-size: 3.96vw; 
+  font-weight: 400;
+}
+
+.price-table tr td {
+  padding-top: 1.75vw;
+  padding-bottom: 1.75vw;
+}
+
+.price-table tr td:nth-child(2),.price-table tr td:nth-child(3) {
+  text-align: right;
+}
+
+@media screen and (min-width:300px) {
+  .price-table{
+    max-height: 14rem;
+  }
+
+  .price-talbel__head {
+      font-size: 14px;
+    }
+
+  .price-table thead th {
+    padding-bottom: 10px;
+  }
+    
+    
+  .price-table tbody {
+    font-size: 12px;
+  }
+    
+  .price-table tr td {
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+}
+
+/* scrollbar  */
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-body-dark);
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #5e6673;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+
+
+
+
+/* balnce data */
+
+.balance-data-continer{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+.balance-data__token {
+  display: flex;
+}
+
+.balance-data__token .icon {
+  background: var(--color-body-light);
+}
+
+/* block */
+
+.block {
+  background: var(--color-body-dark);
+  /* margin: 2.17vw; */
+  padding: 2.17vw;
+}
+
+.block__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.17vw;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background: #2b3139;
+  margin-top: 4.34vw;
+}
+
+@media screen and (min-width:460px){
+  .block{
+    /* margin: 1rem; */
+    padding: 1rem;
+  }
+
+  .block__header {
+    margin-bottom: 1rem;
+  }
+
+  .separator {
+    margin-top: 2rem;
+  }
+}
+
+/* brandLogo */
+
+.brand-logo__image {
+  max-width: 39.06vw;
+  width: 100%;
+}
+
+.brand-logo .separator {
+  display: none;
+}
+
+@media screen and (min-width:460px) {
+  .brand-logo__image {
+    max-width:18.3rem ;
+  }
+}
+
+/* balance for firs token */
+
+.balance-one {
+  margin-bottom: 0;
+
+}
+
+ /* balance of second token */
+
+ .balance-two {
+  margin-top: 0;
+ }
+.balance-two .separator {
+  display: none;
+}
+
+
+/* order book */
+
+.table-continer .table-wrap:nth-child(1) {
+  margin-bottom: 4.34vw;
+}
+
+@media screen and (min-width:460px) {
+  .table-continer .table-wrap:nth-child(1) {
+      margin-bottom: 2rem;
+  }
+}
+
+/* select market */
+
+.select-market .input {
+  margin-bottom: 0;
+}
+
+
+
+/* network select */
+.select-network {
+  display: flex;
+  align-items: center;
+}
+
+.select-network .input {
+  background: var(--color-background);
+  width: 100%;
+  max-width: 30.38vw;
+  margin-bottom: 0;
+  padding-left: 2.17vw;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+.select-network .icon {
+background: var(--color-body-light);
+}
+
+@media screen and (min-width:460px) {
+  .select-network .input {
+    padding-left: 1rem;
+    max-width: 14rem;
+  }
+  .select-network .icon {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* connect wallet button */
+
+.connect-wallet{
+ border-radius: var(--border-radus); 
+ background: var(--color-body-dark);
+ display: inline-flex;
+ margin-bottom: 2.17vw;
+}
+.connect-wallet .label {
+  margin-bottom: 0;
+  margin-right: 2.17vw;
+  padding-left: 2.17vw;
+}
+
+.connect-wallet__balance {
+  display: flex;
+  align-items: center;
+}
+
+.btn-connect {
+  width: unset;
+  background: var(--color-body-light);
+  padding: 1.52vw 2.17vw 1.52vw 2.17vw;
+  border-radius: var(--border-radus);
+  font-size: 3.472vw;
+  font-weight: 500;
+  color: var(--color-body);
+  transition: all 0.3s ;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.btn-connect:hover{
+  background: var(--color-primary);
+}
+
+@media screen and (min-width:460px) {
+
+  .connect-wallet{
+    margin-bottom: 1rem;
+  }
+  
+    .connect-wallet .label {
+      margin-right: 1rem;
+      padding-left: 1rem;
+    }
+  
+    .btn-connect {
+      padding: .7rem 2rem .7rem 2rem;
+      font-size: 1.6rem;
+
+    }
+
+} 
+
+/* Price Chart */
+
+.price-chart{
+
+}
+
+.price-change {
+  height: 4.34vw;
+  margin-left: 2.17vw;
+}
+
+.price-cahrt__header {
+  display: flex;
+  align-items: center;
+}
+
+.price-cahrt__header .label {
+  margin-bottom: 0;
+  margin-left: 2.17vw;
+}
+
+.apexcharts-yaxis-label {
+  font-size: 2.17vw;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+.apexcharts-xaxis-label{
+  font-size: 2.17vw;
+}
+
+@media screen and (min-width:460px) {
+  .price-change{
+    height: 2rem;
+    margin-left: 1rem;
+  }
+  .price-cahrt__header .label {
+    margin-left: 1rem;
+  }
+  .apexcharts-yaxis-label {
+    font-size: 1rem;
+  }
+  .apexcharts-xaxis-label{
+    font-size: 1rem;
+  }
+}
+
+/* order-book */
+
+.order-book .price-table tbody tr:hover td {
+  border: 0;
+  background: var(--color-body-light);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ;
+}
+
+/* grid */
+
+.app {
+  padding: 1rem;
+  display:  grid;
+  grid-template-columns: 30% 70%;
+  align-items:unset;
+}
+.select-network {
+  grid-row: 1;
+  grid-column: 1;
+  margin-bottom: 2.17vw;
+}
+.connect-wallet{
+  grid-column: 2;
+  justify-self: end;
+}
+
+.top-continer{
+  display: grid;
+  grid-column: 1/-1;
+}
+
+.price-chart__container{
+  height: 90vw;
+}
+
+.balance-one, .balance-two, .trades,.order-book ,.my-orders{
+  grid-column: 1/-1;
+}
+.trades .separator,.my-orders .separator,.new-orders .separator,.price-chart .separator,.brand-logo .separator{
+  display: block;
+}
+
+
+@media screen and (min-width:620px) {
+
+  .app {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      align-items: unset;
+    }
+    
+    .select-network {
+      grid-row: 1;
+      grid-column: 1;
+      margin-bottom: 1rem;
+    }
+  
+    .connect-wallet {
+      grid-column: 2;
+      justify-self: end;
+      grid-row: 1;
+    }
+
+   .brand-logo .separator,.price-chart .separator,.new-orders .separator,.balance-one .separator,.my-orders .separator , .trades .separator{
+      display: none;
+    }
+
+    .top-continer{
+      grid-row: 2;
+      grid-column: 1/-1;
+      grid-template-columns: auto auto;
+    }
+    .brand-logo {
+      grid-row: 1;
+      grid-column: 1;
+      margin-right: .5rem;
+      margin-bottom: .5rem;
+    }
+    .select-market {
+      grid-row: 1;
+      grid-column: 2;
+      margin-left: .5rem;
+      margin-bottom: .5rem;
+    }
+  
+    .price-chart {
+      grid-row: 2;
+      grid-column: 1/-1;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+    }
+  
+    .price-chart__container {
+      height: 36rem;
+    }
+  
+    .new-orders {
+      grid-column: 1/-1;
+      margin-bottom: .5rem;
+      margin-top: .5rem;
+    }
+
+    .balance-one {
+      grid-column: 1;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      margin-right: 0.5rem;
+    }
+  
+    .balance-two {
+      grid-column: 2;
+      align-self: flex-end;
+      padding-top: 5.4rem;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      margin-left: .5rem;
+    }
+  
+    .my-orders {
+      grid-column: 1;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      margin-right: .5rem;
+    }
+  
+    .trades {
+      grid-column: 2;
+      padding-top: 3rem;
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      margin-left: 0.5rem;
+  
+    }
+  
+    .order-book {
+      margin-top: .5rem;
+      margin-bottom: .5rem;
+      grid-column: 1/-1;
+    }
+    .order-book .table-continer {
+      display: grid;
+      grid-template-columns: 50fr 50fr;
+      column-gap: 3rem;
+    }
+    .order-book .table-continer .table-wrap{
+      margin-bottom: 0;
+    }
+
+}
+
+@media screen and (min-width:870px) {
+
+  .top-continer {
+      grid-template-columns: 44rem 100fr;
+    }
+
+
+  .brand-logo{
+    grid-row: 1;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+  }
+  .select-market{
+    grid-row: 2;
+    grid-column: 1;
+    margin-right: 0.5rem;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  .select-market .separator{
+    display: block;
+  }
+
+
+  .new-orders {
+    grid-row: 3;
+    grid-column: 1;
+    margin-right: 0.5rem;
+    margin-top: 0;
+  }
+
+  .price-chart{
+    grid-row: 1/span 3;
+    grid-column: 2;
+    margin-left: 0.5rem;
+    margin-top: 0;
+  }
+
+    .price-chart__container {
+      height: 43rem;
+    }
+
+
+}
+
+
+
+/* grid note
+
+grid-template-columns: repeart(2,100px) // 30%, 70%
+
+// if we use precentage value it base on with of continer if we have therd value like 100px 30% 70% then overflow happen. to solve this problem fr is commig to the picture
+
+100px, 30fr, 70fr
+
+to allocate all avilable space we can use auto property 
+
+
+ALIGNING ITEMES(align item inside the grid)
+jutify-items (along the horizontal axis) //defalt value stretch
+align-items (along the vertical axis) // defalt value stretch
+
+ALIGNING ITEMES(align as whole container)
+justify-content: start,end,center
+align-content: start,end,center
+
+ITEM PLACEMENT(this clases going to apply content)
+
+.box-one{
+  grid-column:2 (start from the secont colum first column empty)
+  grid-row: move to the second row
+}
+
+.box-one {
+  grid-column: 1/3(-1) //startLine/endLine or 1/span2
+  grid-row: 2/4 // row span
+
+}
+
+grid tamplate area
+
+.continer{
+  grid-template-area : "area1" "area2", "area3","area4"
+}
+
+.box {
+  grid-area:area1 
+}
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
