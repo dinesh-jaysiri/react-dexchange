@@ -1,17 +1,37 @@
+# Decentralized Exchange
+
+![project image](https://github.com/dinesh-jaysiri/react-dexchange/blob/main/project_image.png?raw=true)
+
+#### Purpose
+A decentralized exchange (DEX) built using order book technique, aimed at providing a secure and transparent platform for users to swap their digital assets. The DEX eliminates the need for intermediaries, ensuring that users have full control over their funds at all times.
+
+#### Key Features
+
+Order book technique for efficient matching of orders
+Transparent transactions with no intermediaries
+Secure platform with user control over funds
+Integration with popular wallet provider, MetaMask, for seamless interaction with the platform
+
+#### Technologies Used
+
+React and Redux for building the front-end interface
+Redux Toolkit for state management
+Solidity for writing smart contracts
+Chai for testing the contracts with Hardhat
+Ether.js for interacting with the contracts from the front-end
+
+#### Results
+The decentralized exchange provides users with a secure and transparent platform for trading their digital assets, eliminating the need for intermediaries and giving users full control over their funds. The use of order book technique ensures efficient matching of orders and the integration with MetaMask provides a seamless user experience.
+
+#### Challenges & Solutions
+One of the biggest challenges in building a 
+DEX is ensuring that transactions are secure and transparent. 
+This was achieved by utilizing solidity contracts and thoroughly testing them using Chai and Hardhat. 
+Another challenge was building a user-friendly interface that could interact with the contracts seamlessly. 
+This was achieved by using React and Redux, and integrating with MetaMask for a seamless user experience.
 
 
-
-
-
-
-
-
-
-
-
-
-
-# Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
